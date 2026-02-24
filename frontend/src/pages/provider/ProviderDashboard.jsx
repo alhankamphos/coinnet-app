@@ -25,6 +25,7 @@ export default function ProviderDashboard() {
       setProvider(pRes.data)
       setPending(txRes.data)
     } catch (err) {
+  console.error(err)
       if (err.response?.status === 404) navigate('/proveedor/setup')
     } finally {
       setLoading(false)

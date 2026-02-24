@@ -30,6 +30,7 @@ function RequestCard({ tx, onRefresh }) {
       if (actionInfo.action === 'complete') await transactionService.complete(tx.id)
       onRefresh()
     } catch (err) {
+  console.error(err)
       setError(err.response?.data?.detail || 'Error')
     } finally {
       setLoading(false)
